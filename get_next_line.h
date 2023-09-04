@@ -6,14 +6,14 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:20:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/04 16:20:44 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/04 16:23:21 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-
+char	*get_net_line(int fd);
 
 
 #endif
