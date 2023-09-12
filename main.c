@@ -6,23 +6,26 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:43:28 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/04 16:18:49 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:26:54 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fcntl.h>
-#include <stdio.h>
+#include "get_next_line.h"
+#include "fcntl.h"
+#include "stdio.h"
 
 int	main(void)
 {
 	int		fd;
 	char	*ptr;
 
-	fd = open("Mussum.txt", O_RDONLY);
-	ptr = "earlier ptr";
-	ptr = get_next_line(fd);
-	printf("actual line at ptr = %s", ptr);
-	close(fd);
-	free(ptr);
+	fd = open("Mussum_only.txt", O_RDONLY);
+	while (*ptr)
+	{
+		printf("\033[0;33m");
+		ptr = get_next_line(fd);
+		free (ptr);
+	}
+	close (fd);
 	return (0);
 }
