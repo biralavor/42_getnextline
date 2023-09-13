@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:43:28 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/12 17:26:54 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/13 10:15:51 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int	main(void)
 	char	*ptr;
 
 	fd = open("Mussum_only.txt", O_RDONLY);
-	while (*ptr)
+	ptr = "Reading Mussum";
+	while (ptr)
 	{
 		printf("\033[0;33m");
 		ptr = get_next_line(fd);

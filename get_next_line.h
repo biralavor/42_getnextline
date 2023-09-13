@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:20:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/12 17:11:13 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:30:31 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ t_char	*ft_get_let(char let);
 void	ft_join_let(t_char **head, t_char *new_let);
 void	ft_lstclear(t_char **lst, void (*del)(void *));
 void	ft_lstdelone(t_char *lst, void (*del)(void*));
+char	*ft_clear_nodes(t_char *str);
 /* get_next_line_utils prototype functions */
 
 void	*ft_calloc(size_t n_items, size_t size);

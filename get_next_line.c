@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:19:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/12 17:19:56 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/12 18:34:55 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,26 @@ char	*get_next_line(int fd)
 {
 	static t_file_info	file;
 
+	if ((!fd || fd < 0) && fd != 0)
+		return (NULL);
 	if (file.index >= file.read || file.index == 0)
 	{
 		file.index = 0;
 		while (file.index < BUFFER_SIZE)
-			file.buffer[file.index] = '\0';
+			file.buffer[file.index++] = '\0';
 		file.index = 0;
 		file.str = NULL;
 		file.len = 0;
 		file.fd = fd;
 		file.read = read(fd, file.buffer, BUFFER_SIZE);
-		// if (file.read <= 0 || file.buffer[file.index] == '\0')
-		// {
-		// 	ft_lstclear(&file.str, file.buffer[file.index]);
-		// 	return (NULL);
-		// }
+		if (file.read == -1)
+			return (ft_clear_nodes(file.str));
+	}
+	if (file.read <= 0 || file.buffer[file.index] == '\0')
+	{
+		if (file.read < 0 && file.str)
+			ft_clear_nodes(file.str);
+		return (NULL);
 	}
 	return (ft_get_line(&file));
 }
@@ -50,6 +55,8 @@ char	*ft_get_line(t_file_info *file)
 		{
 			file->index = 0;
 			file->read = read(file->fd, file->buffer, BUFFER_SIZE);
+			if (file->read == -1)
+				return (ft_clear_nodes(file->str));
 		}
 	}
 	file->index++;
