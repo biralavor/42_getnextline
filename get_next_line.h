@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:20:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/12 18:30:31 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:55:45 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,8 @@
 # include <unistd.h>
 /* Mandatory Libraries */
 
-# include <fcntl.h>
-# include <stdio.h>
-/* Libraries to remove */
-
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 20
+#  define BUFFER_SIZE 1
 # endif
 
 typedef struct s_list	t_char;

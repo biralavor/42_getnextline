@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:19:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/12 18:34:55 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:10:32 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*ft_join_line(t_file_info *file)
 	char	*line;
 	int		index;
 
-	line = (char *)malloc((file->len + 1) * sizeof(char));
+	line = (char *)ft_calloc((file->len + 1), sizeof(char));
 	if (!line)
 	{
 		free (line);

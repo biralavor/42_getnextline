@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:24:20 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/12 18:30:07 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/26 18:29:54 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	*ft_calloc(size_t n_items, size_t size)
 	int		safety_arg;
 	size_t	int_min;
 
-	int_min = -2147483648;
 	if (n_items == 0 && size == 0)
 		return (malloc(0));
+	int_min = -2147483648;
 	if (n_items == int_min || size == int_min)
 		return (NULL);
 	safety_arg = n_items * size;
@@ -53,7 +53,9 @@ t_char	*ft_get_let(char let)
 {
 	t_char	*def_char;
 
-	def_char = (t_char *)malloc(sizeof(t_char));
+	def_char = (t_char *)ft_calloc(1, sizeof(t_char));
+	if (!def_char)
+		return (NULL);
 	def_char->c = let;
 	def_char->next = NULL;
 	return (def_char);
@@ -90,27 +92,3 @@ char	*ft_clear_nodes(t_char *str)
 	temp = NULL;
 	return (NULL);
 }
-
-// void	ft_lstclear(t_char **lst, void (*del)(void *))
-// {
-// 	t_char	*temp;
-
-// 	while (*lst)
-// 	{
-// 		temp = (*lst)->next;
-// 		ft_lstdelone(*lst, del);
-// 		*lst = temp;
-// 		free (lst);
-// 	}
-// 	free (temp);
-// 	return ;
-// }
-
-// void	ft_lstdelone(t_char *lst, void (*del)(void*))
-// {
-// 	if (!lst)
-// 		return ;
-// 	del(lst->c);
-// 	free (lst);
-// }
-
