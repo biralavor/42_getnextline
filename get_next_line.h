@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:20:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/26 18:55:45 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:51:25 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 /* Mandatory Libraries */
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 10
 # endif
 
 typedef struct s_list	t_char;
@@ -45,13 +45,11 @@ char	*ft_join_line(t_file_info *file);
 
 t_char	*ft_get_let(char let);
 void	ft_join_let(t_char **head, t_char *new_let);
-void	ft_lstclear(t_char **lst, void (*del)(void *));
-void	ft_lstdelone(t_char *lst, void (*del)(void*));
 char	*ft_clear_nodes(t_char *str);
 /* get_next_line_utils prototype functions */
 
 void	*ft_calloc(size_t n_items, size_t size);
 void	*ft_memset(void *str, int c, size_t size);
-/* libft prototype functions */
+/* libft prototype functions inside get_next_line_utils*/
 
 #endif
