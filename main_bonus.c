@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:43:28 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/29 15:40:48 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:42:22 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,17 @@ int	main(void)
 	while (ptr || ptr2 || ptr3)
 	{
 		printf("\033[0;36m");
-		printf("GNL line ptr %i = ", index);
+		printf("ptr GNL line %i = ", index);
 		printf("\033[0;33m");
 		ptr = get_next_line(fd);
 		printf("%s", ptr);
 		free (ptr);
-		printf("GNL line ptr2 %i = ", index);
+		printf("ptr 2 GNL line %i = ", index);
 		printf("\033[0;33m");
 		ptr2 = get_next_line(fd2);
 		printf("%s", ptr2);
 		free(ptr2);
-		printf("GNL line ptr3 %i = ", index);
+		printf("ptr3 GNL line %i = ", index);
 		printf("\033[0;33m");
 		ptr3 = get_next_line(fd3);
 		printf("%s", ptr3);
