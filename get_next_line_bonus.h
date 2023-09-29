@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:20:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/29 15:26:27 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:41:37 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # ifndef MAX_FDS
 #  define MAX_FDS 1024
 # endif
+/* Bonus */
 
 typedef struct s_list	t_char;
 struct s_list
