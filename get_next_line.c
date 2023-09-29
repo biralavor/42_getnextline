@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:19:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/27 16:05:07 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:25:47 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*get_next_line(int fd)
 {
-	static t_file_info	file;
+	static t_file_container	file;
 
 	if ((!fd || fd < 0) && fd != 0)
 		return (NULL);
@@ -34,7 +34,7 @@ char	*get_next_line(int fd)
 	return (ft_get_line(&file));
 }
 
-char	*ft_get_line(t_file_info *file)
+char	*ft_get_line(t_file_container *file)
 {
 	file->len = 0;
 	while (file->read > 0)
@@ -58,7 +58,7 @@ char	*ft_get_line(t_file_info *file)
 	return (ft_join_line(file));
 }
 
-char	*ft_join_line(t_file_info *file)
+char	*ft_join_line(t_file_container *file)
 {
 	t_char	*next;
 	char	*line;

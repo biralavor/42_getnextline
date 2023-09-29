@@ -6,7 +6,7 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 16:20:08 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/27 16:51:25 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:25:19 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ struct s_list
 	t_char	*next;
 };
 
-typedef struct s_file_info
+typedef struct s_file_container
 {
 	int		index;
 	int		read;
@@ -36,11 +36,11 @@ typedef struct s_file_info
 	int		fd;
 	char	buffer[BUFFER_SIZE];
 	t_char	*str;
-}			t_file_info;
+}			t_file_container;
 
 char	*get_next_line(int fd);
-char	*ft_get_line(t_file_info *file);
-char	*ft_join_line(t_file_info *file);
+char	*ft_get_line(t_file_container *file);
+char	*ft_join_line(t_file_container *file);
 /* get_next_line main prototype functions */
 
 t_char	*ft_get_let(char let);
