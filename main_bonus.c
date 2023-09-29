@@ -6,11 +6,11 @@
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:43:28 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/29 15:48:07 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/29 17:12:56 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <fcntl.h>
 #include <stdio.h>
 
