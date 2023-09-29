@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: umeneses <umeneses@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 14:43:28 by umeneses          #+#    #+#             */
-/*   Updated: 2023/09/29 14:48:05 by umeneses         ###   ########.fr       */
+/*   Updated: 2023/09/29 15:40:48 by umeneses         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,22 @@ int	main(void)
 {
 	int		fd;
 	int		fd2;
+	int		fd3;
 	int		index;
 	char	*ptr;
 	char	*ptr2;
+	char	*ptr3;
 
 	fd = open("Mussum.txt", O_RDONLY);
 	fd2 = open("big_line_with_nl", O_RDONLY);
+	fd3 = open("alternate_line_nl_with_nl", O_RDONLY);
 	ptr = "/// Reading file 'Mussum.txt' ///";
 	ptr2 = "/// Reading file 'big line with nl' ///";
+	ptr3 = "/// Reading file 'alternate_line_nl_with_nl' ///";
 	printf("\033[0;36m");
-	printf("\n%s and %s\n\n", ptr, ptr2);
+	printf("\n%s and %s and %s\n\n", ptr, ptr2, ptr3);
 	index = 0;
-	while (ptr || ptr2)
+	while (ptr || ptr2 || ptr3)
 	{
 		printf("\033[0;36m");
 		printf("GNL line ptr %i = ", index);
@@ -42,6 +46,11 @@ int	main(void)
 		ptr2 = get_next_line(fd2);
 		printf("%s", ptr2);
 		free(ptr2);
+		printf("GNL line ptr3 %i = ", index);
+		printf("\033[0;33m");
+		ptr3 = get_next_line(fd3);
+		printf("%s", ptr3);
+		free(ptr3);
 		index++;
 	}
 	close (fd);
